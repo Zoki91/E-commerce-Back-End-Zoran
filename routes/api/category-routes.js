@@ -1,12 +1,9 @@
 const router = require('express').Router();
-const {
-  Category,
-  Product
-} = require('../../models');
+const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 // Homework #26 Literals (routes/api)
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   try {
     // find all categories
     const categoryData = await Category.findAll(req.params.id, {
@@ -31,7 +28,7 @@ router.get('/', (req, res) => {
 
 // find one category by its `id` value
 // Homework #26 Literals (routes/api)
-router.get('/:id', (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     // find all categories
     const categoryData = await Category.findAll(req.params.id, {
@@ -56,7 +53,7 @@ router.get('/:id', (req, res) => {
 
 // Homework #26 Literals (routes/api)
 // create a new category
-router.post('/', (req, res) => {
+router.post('/', async (req, res) => {
   try {
     const categoryData = await Category.create({
       category_name: req.body.category_name,
