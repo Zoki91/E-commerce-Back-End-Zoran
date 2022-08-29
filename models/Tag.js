@@ -9,7 +9,7 @@ Tag.init(
     // Homework #12 RESTful-Routes Solved (models)
     // define columns
     id: {
-      type: DataTypes.INTERGER,
+      type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
       autoIncrement: true,
